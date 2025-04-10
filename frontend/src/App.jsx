@@ -1,11 +1,9 @@
-function App() {
+import WordSearchForm from "./components/WordSearchForm"
+
+export default function App() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline text-red-500">
-        Word Search Solver
-      </h1>
+    <div className="min-h-screen bg-gray-100 p-4 flex justify-center items-start">
+      <WordSearchForm />
     </div>
   )
 }
-
-export default App
