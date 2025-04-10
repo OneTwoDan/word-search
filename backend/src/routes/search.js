@@ -1,5 +1,6 @@
 const express = require("express")
 const router = express.Router()
+const { findWords } = require("../utils/finder")
 
 router.post("/", (req, res) => {
   const { words, wordSearch } = req.body
@@ -10,10 +11,8 @@ router.post("/", (req, res) => {
       .json({ error: "Both 'words' and 'wordSearch' must be arrays" })
   }
 
-  res.json({
-    found: [],
-    notFound: words,
-  })
+  const result = findWords(words, wordSearch)
+  res.json(result)
 })
 
 module.exports = router
